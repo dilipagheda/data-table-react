@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDataGrid from 'react-data-grid';
 import useRecords from './hooks/useRecords'
+import {IColumn} from './types'
 import './App.scss';
 
-const columns = [
+const columns: Array<IColumn> = [
   { key: "id", name: "ID", editable: false },
   { key: "title", name: "Title", editable: true },
   { key: "first", name: "First Name", editable: true },

@@ -19,3 +19,9 @@ export interface IGridRowUpdateParams  {
     title?:string;
   }
 }
+
+export interface IColumn {
+  key:string;
+  name:string;
+  editable:boolean;
+}
