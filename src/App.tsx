@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDataGrid from 'react-data-grid';
+import useRecords from './hooks/useRecords'
+import './App.scss';
 
-function App() {
+const columns = [
+  { key: "id", name: "ID", editable: false },
+  { key: "title", name: "Title", editable: true },
+  { key: "first", name: "First Name", editable: true },
+  { key: "last", name: "Last Name", editable: true }
+];
+
+const App = () => {
+
+  const [records, updateGridRow] = useRecords()
+
+  const callback = (params) => updateGridRow({fromRow: params.fromRow, toRow: params.toRow, updated: params.updated})
+  const onClickHandler = () => {
+    alert(JSON.stringify(records))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="outer-container">
+      <h1>My Friends List</h1>
+      <p>double click on any column except ID and you can edit it.</p>
+      <div className="inner-container">
+        <ReactDataGrid
+          columns={columns}
+          rowGetter={i => records[i]}
+          rowsCount={records.length}
+          onGridRowsUpdated={callback}
+          enableCellSelect={true}
+          minHeight={550}
+        />
+      </div>
+      <button className="submit-button" onClick={onClickHandler}>Submit</button>
     </div>
   );
-}
+};
 
 export default App;
