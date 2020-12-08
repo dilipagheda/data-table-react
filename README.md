@@ -17,3 +17,5 @@ App should run on localhost: 3000
 This project is written using React, Typescript, SASS, HTML
 
 # Demo
+
+![](https://github.com/dilipagheda/data-table-react/blob/master/demo.gif)
