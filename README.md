@@ -4,6 +4,12 @@ A small react app that allows user to manage friends list using react data grid,
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Goal of the application
+- The application should simply present a table of data from a simple data source
+- The application should save the state of the table using Redux 
+- The application should allow the user a cell within the table 
+- The application should persist the changed state to Redux 
+
 # How to run this project locally
 
 1. Checkout this project to your local machine
