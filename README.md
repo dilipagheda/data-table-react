@@ -20,7 +20,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 App should run on localhost: 3000
 
 # Tech used
-This project is written using React, Typescript, SASS, HTML
+
+- This project is written using React, Typescript, SASS, HTML.
+- It also used npm package 'react data grid' for faster implementation.
 
 # Demo
 
